@@ -49,7 +49,6 @@ export default {
       handler() { 
         this.sanitized = this.svgContent.replace(/>\s{1,}</g, `><`).replace(/\s{2,}/g, ` `).replace(/[\r\n%#()<>?[\\\]^`{|}]/g, encodeURIComponent)
         this.backgroundValue = `url("data:image/svg+xml,${this.sanitized}")`
-        console.log(this.$parent.$el) 
         if (this.backgroundValue !== '') {this.$parent.background = this.backgroundValue}
       }, 
     },
